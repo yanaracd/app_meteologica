@@ -1,16 +1,19 @@
-import { useState , useRef , useEffect } from 'react'
+import { useState , useRef , useEffect, useContext, createContext } from 'react'
+import { CiudadContext } from './../App'
 import { dataWeather } from '../data/data'
 import './Aside.css'
 
+const AsideContext = createContext()
 
 export const Aside = () => {
+
+    const setCiudad    = useContext(CiudadContext)
 
     const [ peticiones , setPeticiones ] = useState(0)
     const [ municipios , setMunicipios ] = useState()
     const [ provincias , setProvincias ] = useState({})
-    let   [ ciudad     , setCiudad     ] = useState({})
 
-    const fetchGet = async ( url , funcion ) => {
+    const fetchGet = async ( url , setFuncion ) => {
 
         let controller = new AbortController()
         let options = {
@@ -21,13 +24,12 @@ export const Aside = () => {
         try {        
             const res  = await fetch( url , options )
             const data = await res.json()
-            funcion(data)
+            setFuncion(data)
         } catch (error) {
             console.log( error  )
         } finally {
             controller.abort()
         }
-
     }
 
     useEffect(()=>{
@@ -38,24 +40,18 @@ export const Aside = () => {
     } , [])
 
     return(
-        <div className="Aside">
-            {
-                peticiones === 6 && <Modal />
-            }
-            <Search
-                provincias    = { provincias    }                
-                setMunicipios = { setMunicipios }                
-                fetchGet      = { fetchGet      } />
-            <TownList
-                municipios    = { municipios    }
-                peticiones    = { peticiones    }
-                setPeticiones = { setPeticiones }
-                setMunicipios = { setMunicipios }
-                setCiudad     = { setCiudad     }
-                fetchGet      = { fetchGet      } />
-            <Weather
-                ciudad = { ciudad } />
-        </div>
+        <AsideContext.Provider value={{ peticiones, setPeticiones, municipios, setMunicipios, provincias, setProvincias, fetchGet }} >
+
+            <div className="Aside">
+                {
+                    peticiones === 6 && <Modal />
+                }
+                <Search />
+                <TownList />
+                <Weather />
+            </div>
+
+        </AsideContext.Provider>
     )
 }
 
@@ -72,9 +68,9 @@ const Modal = () => {
     )
 }
 
-const Search = ( props ) => {
+const Search = () => {
 
-    const { provincias , fetchGet , setMunicipios } = props
+    const { provincias , setMunicipios , fetchGet } = useContext(AsideContext)
     const inputSearch = useRef()
 
     const getMunicipios = async ( e ) => {
@@ -83,7 +79,7 @@ const Search = ( props ) => {
         let { value : busqueda } = inputSearch.current        
         let buscar = provincias.provincias.find( provincia => provincia.NOMBRE_PROVINCIA.toLowerCase().includes( busqueda.toLowerCase() ))
 
-        await fetchGet(`https://www.el-tiempo.net/api/json/v2/provincias/${buscar.CODPROV}/municipios` , setMunicipios )
+        await fetchGet(`https://www.el-tiempo.net/api/json/v2/provincias/${buscar.CODPROV}/municipios`, setMunicipios)
         inputSearch.current.value = ''
     }
 
@@ -99,9 +95,10 @@ const Search = ( props ) => {
     )
 }
 
-const TownList = ( props ) => {
+const TownList = () => {
 
-    const { municipios , setMunicipios , setCiudad , fetchGet , peticiones , setPeticiones } = props
+    const setCiudad = useContext(CiudadContext)
+    const { municipios , setMunicipios , peticiones , setPeticiones , fetchGet } = useContext(AsideContext)
 
     const selectCity = async ( id ) => {
         console.log(`Seleccionando la ciudad`)
@@ -133,21 +130,20 @@ const TownList = ( props ) => {
     )
 }
 
-const Weather = ({ ciudad }) => {
+const Weather = () => {
 
     return(
         <div className="Aside-div Weather">
-            <WeatherInfo 
-                ciudad = { ciudad } />
-            <WeatherLocation
-                ciudad = { ciudad } />        
+            <WeatherInfo />
+            <WeatherLocation />        
         </div>
     )
 }
 
-const WeatherInfo = ({ ciudad }) => {
+const WeatherInfo = () => {
 
-    const date = new Date()
+    const date   = new Date()
+    const ciudad = useContext(CiudadContext)
 
     return(
         <div className="Weather-div">
@@ -159,8 +155,7 @@ const WeatherInfo = ({ ciudad }) => {
                     dataWeather.map( dataEach =>
                         <WeatherList 
                             key={dataEach.id} 
-                            { ...dataEach }
-                            ciudad = { ciudad } />
+                            { ...dataEach } />
                     )
                 }                
             </ul>
@@ -170,7 +165,8 @@ const WeatherInfo = ({ ciudad }) => {
 
 const WeatherList = ( props ) => {
 
-    const { d1 , d2 , nombre , seccion , span , ciudad } = props
+    const ciudad = useContext(CiudadContext)
+    const { d1 , d2 , nombre , seccion , span } = props
     
     return(
         <li className="Weather-li">
@@ -188,8 +184,9 @@ const WeatherList = ( props ) => {
     )
 }
 
-const WeatherLocation = ({ ciudad }) => {
+const WeatherLocation = () => {
 
+    const ciudad        = useContext(CiudadContext)
     const { municipio } = ciudad
 
     return(
