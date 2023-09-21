@@ -1,0 +1,17 @@
+.State{
+    width: 8rem;
+
+    background-color: #172031;
+    padding: 1rem;
+
+    border-radius: 1.25rem;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.State-span{
+    font-size: 1.25rem;
+    font-weight: bold;
+}

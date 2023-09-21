@@ -1,0 +1,26 @@
+.Header{
+    width: calc(100vw - 25rem);
+    background-color: #0a1120;
+    color: white;
+
+    padding: 2rem 3rem;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 2;
+}
+.Header-ul{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+}
+.Header-li{
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+.Header-li:active{
+    color: rgb(18, 253, 194);
+}

@@ -1,0 +1,27 @@
+.Highlights{
+    width: 20rem;
+
+    background-color: #172031;
+    padding: 1rem;
+
+    border-radius: 1.25rem;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2.5rem;
+}
+.Highlights-h3{
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+.Highlights-h4{
+    font-size: 3rem;
+    font-weight: bold;
+
+    margin: auto;
+}
+.Highlights-span{
+    font-size: 1.25rem;
+}
