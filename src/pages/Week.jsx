@@ -7,15 +7,11 @@ export const Week = () => {
     return(
         <div className="Week">
 
-            <div className="Week-state">
-                <State />
-            </div>
+            <State />
 
             <div className="Week-highlights">
-                <h2 className='Week-h2'>Destacados Hoy</h2>
-                <div className="Week-card">
-                    <Highlights />
-                </div>
+                <h2 className='Week-h2'>Destacados Hoy</h2>                
+                <Highlights />
             </div>
 
         </div>

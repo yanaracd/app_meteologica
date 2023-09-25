@@ -1,4 +1,11 @@
-.State{
+.State-ul{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    gap: 2rem;  
+}
+.State-li{
     width: 8rem;
 
     background-color: #172031;
@@ -12,6 +19,6 @@
     align-items: center;
 }
 .State-span{
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     font-weight: bold;
 }

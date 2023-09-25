@@ -18,13 +18,13 @@ function App() {
       <CiudadContext.Provider value={{ ciudad , setCiudad }}>
 
         <>
-          <Aside />
           <Header />
+          <Aside />          
 
           <main>
             <Routes>
               <Route path='/'     element={ <Today /> } />
-              <Route path='/week' element={ <Week /> } />
+              <Route path='/week' element={ <Week />  } />
             </Routes>
           </main>
         </>

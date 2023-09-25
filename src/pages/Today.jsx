@@ -7,15 +7,11 @@ export const Today = () => {
     return(
         <div className="Today">
 
-            <div className="Today-state">
-                <State />
-            </div>
+            <State />
 
             <div className="Today-highlights">
-                <h2 className='Today-h2'>Destacados Hoy</h2>
-                <div className="Today-card">
-                    <Highlights />
-                </div>
+                <h2 className='Today-h2'>Destacados Hoy</h2>                
+                <Highlights />
             </div>
 
         </div>

@@ -10,38 +10,171 @@ export const dataWeather = [
     { 
         id      : 1, 
         nombre  : 'temperaturas', 
-        seccion : 'min', 
-        span    : '°C', 
-        d1      : 'M9.5 12.5a1.5 1.5 0 1 1-2-1.415V9.5a.5.5 0 0 1 1 0v1.585a1.5 1.5 0 0 1 1 1.415z', 
+        seccion : 'max', 
+        span    : '°C (max)', 
+        d1      : 'M9.5 12.5a1.5 1.5 0 1 1-2-1.415V2.5a.5.5 0 0 1 1 0v8.585a1.5 1.5 0 0 1 1 1.415z', 
         d2      : 'M5.5 2.5a2.5 2.5 0 0 1 5 0v7.55a3.5 3.5 0 1 1-5 0V2.5zM8 1a1.5 1.5 0 0 0-1.5 1.5v7.987l-.167.15a2.5 2.5 0 1 0 3.333 0l-.166-.15V2.5A1.5 1.5 0 0 0 8 1z'
     },
     { 
         id      : 2, 
         nombre  : 'temperaturas', 
-        seccion : 'max', 
-        span    : '°C', 
-        d1      : 'M9.5 12.5a1.5 1.5 0 1 1-2-1.415V2.5a.5.5 0 0 1 1 0v8.585a1.5 1.5 0 0 1 1 1.415z', 
+        seccion : 'min', 
+        span    : '°C (min)', 
+        d1      : 'M9.5 12.5a1.5 1.5 0 1 1-2-1.415V9.5a.5.5 0 0 1 1 0v1.585a1.5 1.5 0 0 1 1 1.415z', 
         d2      : 'M5.5 2.5a2.5 2.5 0 0 1 5 0v7.55a3.5 3.5 0 1 1-5 0V2.5zM8 1a1.5 1.5 0 0 0-1.5 1.5v7.987l-.167.15a2.5 2.5 0 1 0 3.333 0l-.166-.15V2.5A1.5 1.5 0 0 0 8 1z'
-    },
+    }
+    
+]
+
+export const dataHighlights = [
     { 
-        id      : 3, 
+        id      : 0,
+        titulo  : 'Humedad', 
         nombre  : 'humedad', 
         span    : '%', 
-        d1      : 'M13.5 0a.5.5 0 0 0 0 1H15v2.75h-.5a.5.5 0 0 0 0 1h.5V7.5h-1.5a.5.5 0 0 0 0 1H15v2.75h-.5a.5.5 0 0 0 0 1h.5V15h-1.5a.5.5 0 0 0 0 1h2a.5.5 0 0 0 .5-.5V.5a.5.5 0 0 0-.5-.5h-2zM7 1.5l.364-.343a.5.5 0 0 0-.728 0l-.002.002-.006.007-.022.023-.08.088a28.458 28.458 0 0 0-1.274 1.517c-.769.983-1.714 2.325-2.385 3.727C2.368 7.564 2 8.682 2 9.733 2 12.614 4.212 15 7 15s5-2.386 5-5.267c0-1.05-.368-2.169-.867-3.212-.671-1.402-1.616-2.744-2.385-3.727a28.458 28.458 0 0 0-1.354-1.605l-.022-.023-.006-.007-.002-.001L7 1.5zm0 0-.364-.343L7 1.5zm-.016.766L7 2.247l.016.019c.24.274.572.667.944 1.144.611.781 1.32 1.776 1.901 2.827H4.14c.58-1.051 1.29-2.046 1.9-2.827.373-.477.706-.87.945-1.144zM3 9.733c0-.755.244-1.612.638-2.496h6.724c.395.884.638 1.741.638 2.496C11 12.117 9.182 14 7 14s-4-1.883-4-4.267z', 
-        d2      : ''
     },
     { 
-        id      : 4, 
+        id      : 1,
+        titulo  : 'Viento', 
         nombre  : 'viento', 
         span    : ' km/h', 
-        d1      : 'M12.5 2A2.5 2.5 0 0 0 10 4.5a.5.5 0 0 1-1 0A3.5 3.5 0 1 1 12.5 8H.5a.5.5 0 0 1 0-1h12a2.5 2.5 0 0 0 0-5zm-7 1a1 1 0 0 0-1 1 .5.5 0 0 1-1 0 2 2 0 1 1 2 2h-5a.5.5 0 0 1 0-1h5a1 1 0 0 0 0-2zM0 9.5A.5.5 0 0 1 .5 9h10.042a3 3 0 1 1-3 3 .5.5 0 0 1 1 0 2 2 0 1 0 2-2H.5a.5.5 0 0 1-.5-.5z',
-        d2      : ''
     },
     { 
-        id      : 5, 
-        nombre  : 'lluvia', 
+        id      : 2,
+        titulo  : 'Precipitación', 
+        nombre  : 'precipitacion', 
         span    : '%', 
-        d1      : 'M4.158 12.025a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 0 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm3 0a.5.5 0 0 1 .316.633l-1 3a.5.5 0 0 1-.948-.316l1-3a.5.5 0 0 1 .632-.317zm3 0a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 0 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm3 0a.5.5 0 0 1 .316.633l-1 3a.5.5 0 1 1-.948-.316l1-3a.5.5 0 0 1 .632-.317zm.247-6.998a5.001 5.001 0 0 0-9.499-1.004A3.5 3.5 0 1 0 3.5 11H13a3 3 0 0 0 .405-5.973zM8.5 2a4 4 0 0 1 3.976 3.555.5.5 0 0 0 .5.445H13a2 2 0 0 1 0 4H3.5a2.5 2.5 0 1 1 .605-4.926.5.5 0 0 0 .596-.329A4.002 4.002 0 0 1 8.5 2z', 
-        d2      : ''
+    },
+    { 
+        id      : 3,
+        titulo  : 'Orto y Ocaso', 
+        nombre  : 'pronostico', 
+        seccion : 'hoy',
+        atributo: '@attributes',
+        orto    : 'orto',
+        span    : 'ocaso',
     }
+]
+
+export const dataStateSky = [
+    {
+        id  : '0',
+        src : '/assets/stateSky/00.png',
+        alt : 'Despejado'
+    },
+    {
+        id  : '1',
+        src : '/assets/stateSky/01.png',
+        alt : 'Nubes altas'
+    },
+    {
+        id  : '2',
+        src : '/assets/stateSky/02.png',
+        alt : 'Intervalos nubosos'
+    },
+    {
+        id  : '3',
+        src : '/assets/stateSky/03.png',
+        alt : 'Poco nuboso'
+    },
+    {
+        id  : '4',
+        src : '/assets/stateSky/04.png',
+        alt : 'Nuboso con lluvia intermitente'
+    },
+    {
+        id  : '5',
+        src : '/assets/stateSky/05.png',
+        alt : 'Cubierto'
+    },
+    {
+        id  : '6',
+        src : '/assets/stateSky/06.png',
+        alt : 'Lluvia'
+    },
+    {
+        id  : '7',
+        src : '/assets/stateSky/07.png',
+        alt : 'Chubasco con tormenta'
+    },
+    {
+        id  : '8',
+        src : '/assets/stateSky/08.png',
+        alt : 'Tormenta'
+    },
+    {
+        id  : '9',
+        src : '/assets/stateSky/09.png',
+        alt : 'Fuertes vientos'
+    },
+    {
+        id  : '10',
+        src : '/assets/stateSky/010.png',
+        alt : 'Tormenta con granizo'
+    },
+    {
+        id  : '11',
+        src : '/assets/stateSky/011.png',
+        alt : 'Nieve'
+    },
+    {
+        id  : '0n',
+        src : '/assets/stateSky/00n.png',
+        alt : 'Despejado'
+    },
+    {
+        id  : '1n',
+        src : '/assets/stateSky/01n.png',
+        alt : 'Nubes altas'
+    },
+    {
+        id  : '2n',
+        src : '/assets/stateSky/02n.png',
+        alt : 'Intervalos nubosos'
+    },
+    {
+        id  : '3n',
+        src : '/assets/stateSky/03n.png',
+        alt : 'Poco nuboso'
+    },
+    {
+        id  : '4n',
+        src : '/assets/stateSky/04n.png',
+        alt : 'Nuboso con lluvia intermitente'
+    },
+    {
+        id  : '5n',
+        src : '/assets/stateSky/05n.png',
+        alt : 'Cubierto'
+    },
+    {
+        id  : '6n',
+        src : '/assets/stateSky/06n.png',
+        alt : 'Lluvia'
+    },
+    {
+        id  : '7n',
+        src : '/assets/stateSky/07n.png',
+        alt : 'Chubasco con tormenta'
+    },
+    {
+        id  : '8n',
+        src : '/assets/stateSky/08n.png',
+        alt : 'Tormenta'
+    },
+    {
+        id  : '9n',
+        src : '/assets/stateSky/09n.png',
+        alt : 'Fuertes vientos'
+    },
+    {
+        id  : '10n',
+        src : '/assets/stateSky/010n.png',
+        alt : 'Tormenta con granizo'
+    },
+    {
+        id  : '11n',
+        src : '/assets/stateSky/011n.png',
+        alt : 'Nieve'
+    },
 ]

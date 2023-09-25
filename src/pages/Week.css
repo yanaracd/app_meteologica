@@ -1,5 +1,5 @@
 .Week{
-    width: calc(100vw - 25rem);
+    width: calc(100vw - 20rem);
     height: calc(100vh - 5.4rem);
 
     padding: 2rem 3rem;
@@ -20,13 +20,6 @@
 
     overflow: scroll;
 }
-.Week-state, .Week-card{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    align-content: flex-start;
-    gap: 2rem;  
-}
 .Week-highlights{
     display: flex;
     flex-flow: column nowrap;
@@ -35,5 +28,14 @@
     gap: 2.5rem;
 }
 .Week-h2{
-    font-size: 2rem;
+    font-size: 1.5rem;
+}
+
+@media (max-width : 50rem){
+    .Week{
+        width: 100vw;
+        height: auto;
+
+        position: relative;
+    }
 }

@@ -1,5 +1,12 @@
-.Highlights{
-    width: 20rem;
+.Highlights-ul{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    gap: 2rem;  
+}
+.Highlights-li{
+    width: 15.625rem;
 
     background-color: #172031;
     padding: 1rem;
@@ -13,15 +20,33 @@
     gap: 2.5rem;
 }
 .Highlights-h3{
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     font-weight: bold;
 }
 .Highlights-h4{
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: bold;
 
     margin: auto;
 }
 .Highlights-span{
-    font-size: 1.25rem;
+    font-size: 1.125rem;
+}
+
+@media (max-width : 30rem){
+    .Highlights-ul{
+        justify-content: center;
+    }
+    .Highlights-li{
+        width: 15.625rem;
+    }
+}
+
+@media (max-width : 17.5rem){
+    .Highlights-li{
+        width: 10rem;
+    }
+    .Highlights-h3{
+        font-weight: initial;
+    }
 }

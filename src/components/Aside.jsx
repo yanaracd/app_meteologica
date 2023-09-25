@@ -1,13 +1,13 @@
 import { useState , useRef , useEffect, useContext, createContext } from 'react'
 import { CiudadContext } from './../App'
-import { dataWeather } from '../data/data'
+import { dataStateSky, dataWeather } from '../data/data'
 import './Aside.css'
 
 const AsideContext = createContext()
 
 export const Aside = () => {
 
-    const setCiudad    = useContext(CiudadContext)
+    const { setCiudad } = useContext(CiudadContext)
 
     const [ peticiones , setPeticiones ] = useState(0)
     const [ municipios , setMunicipios ] = useState()
@@ -97,7 +97,7 @@ const Search = () => {
 
 const TownList = () => {
 
-    const setCiudad = useContext(CiudadContext)
+    const { setCiudad } = useContext(CiudadContext)
     const { municipios , setMunicipios , peticiones , setPeticiones , fetchGet } = useContext(AsideContext)
 
     const selectCity = async ( id ) => {
@@ -124,8 +124,7 @@ const TownList = () => {
                         }         
                     </ul>
                 </div>
-            }
-            
+            }            
         </>
     )
 }
@@ -143,11 +142,11 @@ const Weather = () => {
 const WeatherInfo = () => {
 
     const date   = new Date()
-    const ciudad = useContext(CiudadContext)
+    const { ciudad } = useContext(CiudadContext)
 
     return(
         <div className="Weather-div">
-            <img className="Weather-img" src='/assets/stateSky/Iconos-16.png' alt='Estado del tiempo'></img>
+            <img className="Weather-img" src='/assets/stateSky/00.png' alt='Estado del tiempo'></img>
             <h2 className="Weather-h2">{`${ciudad.temperatura_actual}°C`}</h2>
             <span className='Weather-span'>{ `${date.toDateString()}, ${date.toLocaleTimeString()}` }</span>
             <ul className="Weather-ul">
@@ -165,7 +164,7 @@ const WeatherInfo = () => {
 
 const WeatherList = ( props ) => {
 
-    const ciudad = useContext(CiudadContext)
+    const { ciudad } = useContext(CiudadContext)
     const { d1 , d2 , nombre , seccion , span } = props
     
     return(
@@ -175,10 +174,7 @@ const WeatherList = ( props ) => {
                 <path d={d2}/>
             </svg>
             {
-                ciudad[nombre] && seccion
-                    ? <span className='Weather-text'>{ciudad[nombre][seccion]}{span}</span>
-                    : <span className='Weather-text'>{ciudad[nombre]}{span}</span>
-
+                ciudad[nombre] && seccion && <span className='Weather-text'>{ciudad[nombre][seccion]}{span}</span>
             }
         </li>
     )
@@ -186,7 +182,7 @@ const WeatherList = ( props ) => {
 
 const WeatherLocation = () => {
 
-    const ciudad        = useContext(CiudadContext)
+    const { ciudad }    = useContext(CiudadContext)
     const { municipio } = ciudad
 
     return(

@@ -1,5 +1,6 @@
 .Header{
-    width: calc(100vw - 25rem);
+    width: calc(100vw - 20rem);
+
     background-color: #0a1120;
     color: white;
 
@@ -18,9 +19,17 @@
     gap: 2rem;
 }
 .Header-li{
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     text-transform: uppercase;
 }
 .Header-li:active{
     color: rgb(18, 253, 194);
+}
+
+@media (max-width : 50rem){
+    .Header{
+        width: 100vw;
+        
+        position: relative;
+    }
 }
