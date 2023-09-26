@@ -200,4 +200,7 @@
         min-height: auto;
         gap: 2rem;
     }
+    .Modal{
+        position: fixed;
+    }
 }

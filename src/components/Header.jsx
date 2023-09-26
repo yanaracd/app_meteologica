@@ -5,15 +5,22 @@ export const Header = () => {
     return(
         <div className="Header">
             <nav className="Header-nav">
-                <ul className="Header-ul">
-                    <li className="Header-li">
-                        <NavLink to='/' >Hoy</NavLink>
-                    </li>
-                    <li className="Header-li">
-                        <NavLink to='/week'>Semana</NavLink>
-                    </li>
-                </ul>
+                <HeaderUl />
             </nav>
         </div>
+    )
+}
+
+const HeaderUl = () => {
+
+    return(
+        <ul className="Header-ul">
+            <li className="Header-li">
+                <NavLink to='/' >Hoy</NavLink>
+            </li>
+            <li className="Header-li">
+                <NavLink to='/week'>Semana</NavLink>
+            </li>
+        </ul>
     )
 }

@@ -1,5 +1,5 @@
 import { Highlights } from '../components/Highlights'
-import { State } from '../components/State'
+import { StateToday } from '../components/StateToday'
 import './Today.css'
 
 export const Today = () => {
@@ -7,7 +7,7 @@ export const Today = () => {
     return(
         <div className="Today">
 
-            <State />
+            <StateToday />
 
             <div className="Today-highlights">
                 <h2 className='Today-h2'>Destacados Hoy</h2>                

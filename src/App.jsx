@@ -23,8 +23,8 @@ function App() {
 
           <main>
             <Routes>
-              <Route path='/'     element={ <Today /> } />
-              <Route path='/week' element={ <Week />  } />
+              <Route path='/'         element={ <Today /> } />
+              <Route path='/week'     element={ <Week />  } />
             </Routes>
           </main>
         </>

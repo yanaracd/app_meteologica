@@ -56,125 +56,17 @@ export const dataHighlights = [
     }
 ]
 
-export const dataStateSky = [
-    {
-        id  : '0',
-        src : '/assets/stateSky/00.png',
-        alt : 'Despejado'
-    },
-    {
-        id  : '1',
-        src : '/assets/stateSky/01.png',
-        alt : 'Nubes altas'
-    },
-    {
-        id  : '2',
-        src : '/assets/stateSky/02.png',
-        alt : 'Intervalos nubosos'
-    },
-    {
-        id  : '3',
-        src : '/assets/stateSky/03.png',
-        alt : 'Poco nuboso'
-    },
-    {
-        id  : '4',
-        src : '/assets/stateSky/04.png',
-        alt : 'Nuboso con lluvia intermitente'
-    },
-    {
-        id  : '5',
-        src : '/assets/stateSky/05.png',
-        alt : 'Cubierto'
-    },
-    {
-        id  : '6',
-        src : '/assets/stateSky/06.png',
-        alt : 'Lluvia'
-    },
-    {
-        id  : '7',
-        src : '/assets/stateSky/07.png',
-        alt : 'Chubasco con tormenta'
-    },
-    {
-        id  : '8',
-        src : '/assets/stateSky/08.png',
-        alt : 'Tormenta'
-    },
-    {
-        id  : '9',
-        src : '/assets/stateSky/09.png',
-        alt : 'Fuertes vientos'
-    },
-    {
-        id  : '10',
-        src : '/assets/stateSky/010.png',
-        alt : 'Tormenta con granizo'
-    },
-    {
-        id  : '11',
-        src : '/assets/stateSky/011.png',
-        alt : 'Nieve'
-    },
-    {
-        id  : '0n',
-        src : '/assets/stateSky/00n.png',
-        alt : 'Despejado'
-    },
-    {
-        id  : '1n',
-        src : '/assets/stateSky/01n.png',
-        alt : 'Nubes altas'
-    },
-    {
-        id  : '2n',
-        src : '/assets/stateSky/02n.png',
-        alt : 'Intervalos nubosos'
-    },
-    {
-        id  : '3n',
-        src : '/assets/stateSky/03n.png',
-        alt : 'Poco nuboso'
-    },
-    {
-        id  : '4n',
-        src : '/assets/stateSky/04n.png',
-        alt : 'Nuboso con lluvia intermitente'
-    },
-    {
-        id  : '5n',
-        src : '/assets/stateSky/05n.png',
-        alt : 'Cubierto'
-    },
-    {
-        id  : '6n',
-        src : '/assets/stateSky/06n.png',
-        alt : 'Lluvia'
-    },
-    {
-        id  : '7n',
-        src : '/assets/stateSky/07n.png',
-        alt : 'Chubasco con tormenta'
-    },
-    {
-        id  : '8n',
-        src : '/assets/stateSky/08n.png',
-        alt : 'Tormenta'
-    },
-    {
-        id  : '9n',
-        src : '/assets/stateSky/09n.png',
-        alt : 'Fuertes vientos'
-    },
-    {
-        id  : '10n',
-        src : '/assets/stateSky/010n.png',
-        alt : 'Tormenta con granizo'
-    },
-    {
-        id  : '11n',
-        src : '/assets/stateSky/011n.png',
-        alt : 'Nieve'
-    },
-]
+export const dataStateSky = {
+    despejado : '/assets/stateSky/00.png',
+    nubes_altas : '/assets/stateSky/01.png',
+    intervalos_nubosos : '/assets/stateSky/02.png',
+    poco_nuboso : '/assets/stateSky/03.png',
+    nuboso_con_lluvia_escasa : '/assets/stateSky/04.png', 
+    cubierto : '/assets/stateSky/05.png',
+    lluvia : '/assets/stateSky/06.png',
+    chubasco_con_tormenta : '/assets/stateSky/07.png',
+    tormenta : '/assets/stateSky/08.png',
+    fuertes_vientos : '/assets/stateSky/09.png',
+    tormenta_con_granizo : '/assets/stateSky/010.png', 
+    nieve : '/assets/stateSky/011.png'
+}

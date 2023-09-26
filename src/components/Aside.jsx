@@ -1,7 +1,8 @@
 import { useState , useRef , useEffect, useContext, createContext } from 'react'
 import { CiudadContext } from './../App'
-import { dataStateSky, dataWeather } from '../data/data'
+import { dataWeather } from '../data/data'
 import './Aside.css'
+import { Image } from './Image'
 
 const AsideContext = createContext()
 
@@ -101,7 +102,6 @@ const TownList = () => {
     const { municipios , setMunicipios , peticiones , setPeticiones , fetchGet } = useContext(AsideContext)
 
     const selectCity = async ( id ) => {
-        console.log(`Seleccionando la ciudad`)
         
         await fetchGet(`https://www.el-tiempo.net/api/json/v2/provincias/${id.substr(0,2)}/municipios/${id}`, setCiudad)
         setMunicipios()
@@ -142,17 +142,33 @@ const Weather = () => {
 const WeatherInfo = () => {
 
     const date   = new Date()
+
+    const fecha  = date.toDateString()
+    
+    const hora   = date.toLocaleTimeString('en-US', {
+        hour   : 'numeric',
+        minute : 'numeric',
+        hour12 : true,
+    })
+
     const { ciudad } = useContext(CiudadContext)
+
+    if (!ciudad || !ciudad.stateSky || !ciudad.stateSky.description){
+        return null
+    }
 
     return(
         <div className="Weather-div">
-            <img className="Weather-img" src='/assets/stateSky/00.png' alt='Estado del tiempo'></img>
+            {
+                <Image 
+                    estadoCielo = { ciudad.stateSky.description } />
+            }
             <h2 className="Weather-h2">{`${ciudad.temperatura_actual}°C`}</h2>
-            <span className='Weather-span'>{ `${date.toDateString()}, ${date.toLocaleTimeString()}` }</span>
+            <span className='Weather-span'>{ `${ fecha }, ${ hora }` }</span>
             <ul className="Weather-ul">
                 {
                     dataWeather.map( dataEach =>
-                        <WeatherList 
+                        <WeatherList
                             key={dataEach.id} 
                             { ...dataEach } />
                     )
