@@ -2,7 +2,7 @@
 ![Imagen del proyecto](https://github.com/yanaracd/app_meteologica/blob/main/public/assets/app.png)
 
 ## Ejemplo en vivo
-- [URL APP Meteorológica](https://XXX/)
+- [URL APP Meteorológica](https://main--chimerical-pika-8d97c2.netlify.app/)
 
 ## Descripción 📑
 APP Meteorológica es una aplicación web que muestra los datos meteorológicos devueltos por una API para una localidad seleccionada.
